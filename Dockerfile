@@ -9,7 +9,7 @@ LABEL io.k8s.description="base image for all  apps" \
 USER root
 
 #ADD settings.xml /home/jboss/.m2/settings.xml
-RUN curl  http://archive.apache.org/dist/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip > /tmp/apache-maven-3.2.5-bin.zip
+RUN curl  http://archive.apache.org/dist/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip  -o  /tmp/apache-maven-3.2.5-bin.zip
 RUN mkdir -p /opt/poi
 RUN unzip /tmp/apache-maven-3.2.5-bin.zip -d /opt/poi
 RUN chmod -R 755 /opt/poi/apache-maven-3.2.5
